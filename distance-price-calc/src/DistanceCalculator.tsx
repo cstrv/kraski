@@ -36,7 +36,8 @@ const DistanceCalculator: React.FC = () => {
     }
 
     try {
-      const url = `https://codercastrov.online:3000/distance?origins=${origin.value}&destinations=${destination.value}&key=WUyWbmgUWU8Jg6E71aMRqZV2ZBiJAiYTUroajg7bFleHUIAdVNdIgd1nP9goces8`;
+      // Обратите внимание, что ключ API теперь вставлен напрямую в URL. Это не рекомендуется по причинам безопасности.
+      const url = `https://api-v2.distancematrix.ai/maps/api/distancematrix/json?origins=${origin.value}&destinations=${destination.value}&key=WUyWbmgUWU8Jg6E71aMRqZV2ZBiJAiYTUroajg7bFleHUIAdVNdIgd1nP9goces8`;
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -51,7 +52,8 @@ const DistanceCalculator: React.FC = () => {
     } catch (error) {
       console.error(error);
     }
-  }
+}
+
 
   const columns: Column[] = React.useMemo(
     () => [

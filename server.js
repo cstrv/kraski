@@ -31,17 +31,6 @@ app.get('/distance', async (req, res) => {
   }
 });
 
-
-// const options = {
-//   key: fs.readFileSync('key-nopass.pem'), 
-//   cert: fs.readFileSync('cert.pem'), 
-// };
-
-// const PORT = process.env.PORT || 3000;
-// https.createServer(options, app).listen(PORT, () => {
-//   console.log(`Server is running on https://localhost:${PORT}`);
-// });
-
 const options = {
   key: fs.readFileSync('/etc/letsencrypt/live/codercastrov.online/privkey.pem'),
   cert: fs.readFileSync('/etc/letsencrypt/live/codercastrov.online/cert.pem')
